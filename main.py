@@ -3,8 +3,8 @@ import os
 from bs4 import BeautifulSoup as bs
 
 while True:
-    name = input("今晚我想來點?(輸入快樂六位數)")
-    if len(name) == 6:
+    name = input("今晚我想來點?(至多輸入快樂六位數)")
+    if len(name) <= 6:
         break
     else:
         print("我覺得輸入六位數應該沒有很難")
@@ -26,11 +26,10 @@ for i in range(1,10000):
         break
     else:
         if not os.path.isdir(nowpath):
-            print("新增資料夾並增加第1頁。")
+            print("新增資料夾。")
             os.mkdir(nowpath)
-        else:
-            print("已增加第" + str(i) + "頁。")
         html = bs(result)
         img = html.select('section#image-container img')[0]
         imgurl = img.get('src')
         ur.urlretrieve(imgurl, os.path.join(nowpath, str(i) + '.jpg'), reporthook=None, data=None)
+        print("已增加第" + str(i) + "頁。")
