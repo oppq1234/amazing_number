@@ -33,3 +33,4 @@ for i in range(1,10000):
         imgurl = img.get('src')
         ur.urlretrieve(imgurl, os.path.join(nowpath, str(i) + '.jpg'), reporthook=None, data=None)
         print("已增加第" + str(i) + "頁。")
+        time.sleep(1)
