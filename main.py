@@ -1,4 +1,5 @@
 import urllib.request as ur
+import urllib
 import requests
 import os
 import time
@@ -46,12 +47,13 @@ class nhview:
         }
         for i in range(1,10000):
             url = self.origin + str(i)
-            nowpath = os.path.abspath('.\本' + self.name)        #獲取當前路徑
+            nowpath = os.path.abspath('./本' + self.name)        #獲取當前路徑
 
             try:
                 req = ur.Request(url=url,headers=headers)
                 result = ur.urlopen(req).read().decode('utf-8')
-            except:
+            except urllib.error.URLError as e:
+                print(e.reason)
                 print("下載完成")
                 break
             else:
@@ -85,7 +87,3 @@ while True:
         nh.start()
     else:
         break
-
-
-
-    

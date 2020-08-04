@@ -16,6 +16,10 @@
 
 此程式用法相當簡單，只要輸入數字，就能發揮它的功用。
 
+如果遇到錯誤請嘗試更新OpenSSL協定
+
+<https://adon988.logdown.com/posts/7835861-resolve-python-ssl-certificateverifyfailed-certificate-verify-failed>
+
 
 
 
