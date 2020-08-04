@@ -16,3 +16,8 @@
 
 此程式用法相當簡單，只要輸入數字，就能發揮它的功用。
 
+
+
+
+This program is a web crawler for nhentai.You can use it to download the book you want,Just input six digits or -1.
+

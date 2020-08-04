@@ -14,8 +14,11 @@ class nhview:
         self.name = str(random.randint(1, 400000))
 
     def checklink(self):
+        headers = {
+        'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+        }
         self.origin = "https://nhentai.net/g/" + self.name + "/"      #轉換成網址
-        resp = requests.get(self.origin)
+        resp = requests.get(self.origin, headers = headers)
         if resp.status_code == 200:
             print("號碼：" + self.name)
             print("連線成功")
